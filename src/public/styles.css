@@ -1,0 +1,95 @@
+/* Reset some default margin and padding */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color for the body */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  display: flex; /* Create a flex container to arrange the vertical navbar and main content horizontally */
+  flex-direction: column; /* Arrange items vertically within the flex container */
+  height: 100vh; /* Make the container take up 100% of the viewport height */
+  margin: 0; /* Remove default body margin */
+}
+
+/* Style the top navbar */
+.horizontal-navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin: 0; /* Remove margin */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2; /* Ensure it's on top of other content */
+  height: 50px; /* Set a fixed height for the horizontal navbar */
+}
+
+.horizontal-navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.horizontal-navbar li {
+  margin-right: 10px;
+}
+
+.horizontal-navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Create a flex container for the vertical navbar and main content */
+.container {
+  display: flex;
+  flex: 1; /* Allow the container to take up available space */
+  margin-top: 50px; /* Adjust the top margin to account for the height of the horizontal navbar */
+}
+
+/* Style the side navbar */
+.vertical-navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  width: 200px;
+  position: fixed;
+  top: 50px; /* Adjust the top position to align with the bottom of the horizontal navbar */
+  bottom: 0;
+  margin: 0; /* Remove margin */
+  z-index: 1; /* Ensure it's behind the horizontal navbar */
+}
+
+.vertical-navbar ul {
+  list-style: none;
+}
+
+.vertical-navbar li {
+  margin-bottom: 10px;
+}
+
+.vertical-navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Add margin to the main content to create spacing and make it scrollable */
+main {
+  margin-left: 210px; /* Adjust the margin to account for the width of the vertical navbar */
+  padding: 10px;
+  background-color: #fff;
+  flex: 2; /* Allow the main content to take up more available space */
+  overflow-y: auto; /* Add vertical scroll if content exceeds the height of the main content area */
+}
+
+/* Style the book list */
+main ul {
+  list-style: none;
+}
+
+main li {
+  margin-bottom: 10px;
+}
