@@ -14,13 +14,21 @@ body {
   margin: 0; /* Remove default body margin */
 }
 
+/* Create a container for fixed-position navbars */
+.fixed-navbars {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2; /* Ensure it's on top of other content */
+}
+
 /* Style the top navbar */
 .horizontal-navbar {
+  box-sizing: border-box;
   background-color: #333;
   color: #fff;
   padding: 8px; /* Adjusted padding */
-  margin: 0; /* Remove margin */
-  z-index: 2; /* Ensure it's on top of other content */
   height: 4vh; /* Adjusted height to 4% of viewport height */
 }
 
@@ -39,27 +47,14 @@ body {
   color: #fff;
 }
 
-/* Create a flex container for the page */
-.page-container {
-  display: flex;
-  flex-direction: column; /* Arrange items vertically within the flex container */
-  flex: 1; /* Allow the container to take up available space */
-}
-
-/* Create a flex container for the vertical navbar and main content */
-.container {
-  display: flex;
-  flex-direction: row; /* Arrange items horizontally within the flex container */
-  flex: 1; /* Allow the container to take up available space */
-}
-
 /* Style the side navbar */
 .vertical-navbar {
+  box-sizing: border-box;
   background-color: #333;
   color: #fff;
   padding: 10px;
-  width: 20vh; /* Adjusted width to 20% of viewport height */
-  z-index: 1; /* Ensure it's behind the horizontal navbar */
+  width: 15vw; /* Adjusted width to 20% of viewport width */
+  height: calc(100vh - 4vh); /* Adjusted height to fill remaining viewport height */
 }
 
 .vertical-navbar ul {
@@ -75,12 +70,28 @@ body {
   color: #fff;
 }
 
+/* Create a flex container for the page */
+.page-container {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically within the flex container */
+  flex: 1; /* Allow the container to take up available space */
+  margin-top: 4vh; /* Adjusted margin to avoid overlapping with the fixed navbar */
+}
+
+/* Create a flex container for the vertical navbar and main content */
+.container {
+  display: flex;
+  flex-direction: row; /* Arrange items horizontally within the flex container */
+  flex: 1; /* Allow the container to take up available space */
+}
+
 /* Add margin to the main content to create spacing and make it scrollable */
 main {
   flex: 1; /* Allow the main content to take up more available space */
   overflow-y: auto; /* Add vertical scroll if content exceeds the height of the main content area */
   padding: 10px;
-  background-color: #fff;
+  background-color: rgb(14, 199, 44);
+  margin-left: 15%;
 }
 
 /* Style the book list */
