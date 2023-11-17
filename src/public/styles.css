@@ -83,6 +83,7 @@ body {
   display: flex;
   flex-direction: row; /* Arrange items horizontally within the flex container */
   flex: 1; /* Allow the container to take up available space */
+  margin-left: 15%;
 }
 
 /* Add margin to the main content to create spacing and make it scrollable */
@@ -91,7 +92,7 @@ main {
   overflow-y: auto; /* Add vertical scroll if content exceeds the height of the main content area */
   padding: 10px;
   background-color: rgb(14, 199, 44);
-  margin-left: 15%;
+  
 }
 
 /* Style the book list */
