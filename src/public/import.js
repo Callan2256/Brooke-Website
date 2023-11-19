@@ -28,20 +28,26 @@ function fetchCSVData() {
       // Now, 'data' contains the parsed data from the CSV file
 
       // Display the data as a list on the main page
-      const mainContent = document.querySelector('main');
-
-      // Create an unordered list to hold the data
-      const ul = document.createElement('ul');
+      const bookTile = document.getElementsByClassName('tileContainer');
+      console.log(bookTile)
 
       // Loop through the data and create list items
       data.forEach((item) => {
-        const li = document.createElement('li');
-        li.textContent = `${item.title} by ${item.author} (${item.genre}) - Published in ${item.publication_date}`;
-        ul.appendChild(li);
+        const book = document.createElement('div');
+        book.classList.add('bookBox');
+
+        const title = item.title;
+
+        const name = document.createElement('p');
+        const text = document.createTextNode(title);
+        name.appendChild(text);
+        book.appendChild(name);
+
+        console.log(book)
+
+        bookTile[0].appendChild(book);
       });
 
-      // Append the list to the main content area
-      mainContent.appendChild(ul);
     })
     .catch((error) => {
       console.error('Error fetching or parsing CSV data:', error);

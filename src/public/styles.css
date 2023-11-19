@@ -95,6 +95,28 @@ main {
   
 }
 
+.tileContainer {
+  margin: 1%;
+  background-color: aqua;
+  width: auto;
+  height: 100%; /*Delete this later*/
+
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.bookBox {
+  width: 200px;
+  height: 100px;
+
+
+  margin: 10px;
+  background-color: chocolate;
+}
+
 /* Style the book list */
 main ul {
   list-style: none;
